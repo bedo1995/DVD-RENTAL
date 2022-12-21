@@ -27,6 +27,7 @@ WITH t1 AS (SELECT c.name AS Genre, count(cu.customer_id) AS Total_rent_demand
             JOIN payment p
             USING(rental_id)
             GROUP BY 1
+	    
             ORDER BY 2 DESC)
 SELECT t1.genre, t1.total_rent_demand, t2.total_sales
 FROM t1
